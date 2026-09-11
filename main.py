@@ -1,4 +1,11 @@
 from fastapi import FastAPI
+from dotenv import load_dotenv
+from passlib.context import CryptContext
+import os
+#======================================================================#
+load_dotenv() #loads dotev
+SECRET_KEY:str = os.getenv("SECRETKEY") #loads secret key
+bcrypt_context:CryptContext = CryptContext(schemes=["bcrypt"], deprecated="auto") #creates cryptography
 #======================================================================#
 app:FastAPI = FastAPI() #create FastAPI instance
 #======================================================================#
